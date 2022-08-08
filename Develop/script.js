@@ -94,231 +94,117 @@ var five = moment('17:00', timeFormat)
 var currentTime = moment()
 
 if (currentTime.isBefore(eight)) {
-  work8.className += '.future'
-  work9.className += '.future'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('future')
+  work9.classList.add('future')
+  work10.classList.add('future')
+  work11.classList.add('future')
+  work12.classList.add('future')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(eight, nine)) {
-  work8.className += '.present'
-  work9.className += '.future'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('present')
+  work9.classList.add('future')
+  work10.classList.add('future')
+  work11.classList.add('future')
+  work12.classList.add('future')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(nine, ten)) {
-  work8.className += '.past'
-  work9.className += '.present'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('present')
+  work10.classList.add('future')
+  work11.classList.add('future')
+  work12.classList.add('future')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(ten, eleven)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.present'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('present')
+  work11.classList.add('future')
+  work12.classList.add('future')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(eleven, twelve)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.present'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('present')
+  work12.classList.add('future')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(twelve, one)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.present'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('present')
+  work1.classList.add('future')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(one, two)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.present'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('past')
+  work1.classList.add('present')
+  work2.classList.add('future')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(two, three)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.present'
-  work3.className += '.future'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('past')
+  work1.classList.add('past')
+  work2.classList.add('present')
+  work3.classList.add('future')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(three, four)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.present'
-  work4.className += '.future'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('past')
+  work1.classList.add('past')
+  work2.classList.add('past')
+  work3.classList.add('present')
+  work4.classList.add('future')
 } else if (currentTime.isBetween(four, five)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.past'
-  work4.className += '.present'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('past')
+  work1.classList.add('past')
+  work2.classList.add('past')
+  work3.classList.add('past')
+  work4.classList.add('present')
 } else if (currentTime.isAfter(five)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.past'
-  work4.className += '.past'
+  work8.classList.add('past')
+  work9.classList.add('past')
+  work10.classList.add('past')
+  work11.classList.add('past')
+  work12.classList.add('past')
+  work1.classList.add('past')
+  work2.classList.add('past')
+  work3.classList.add('past')
+  work4.classList.add('past')
 }
 
-
-/*
-if (currentTime.isBefore(eight)) {
-  work8.className += '.future'
-  work9.className += '.future'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(eight, nine)) {
-  work8.className += '.present'
-  work9.className += '.future'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(nine, ten)) {
-  work8.className += '.past'
-  work9.className += '.present'
-  work10.className += '.future'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(ten, eleven)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.present'
-  work11.className += '.future'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(eleven, twelve)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.present'
-  work12.className += '.future'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(twelve, one)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.present'
-  work1.className += '.future'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(one, two)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.present'
-  work2.className += '.future'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(two, three)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.present'
-  work3.className += '.future'
-  work4.className += '.future'
-} else if (currentTime.isBetween(three, four)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.present'
-  work4.className += '.future'
-} else if (currentTime.isBetween(four, five)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.past'
-  work4.className += '.present'
-} else if (currentTime.isAfter(five)) {
-  work8.className += '.past'
-  work9.className += '.past'
-  work10.className += '.past'
-  work11.className += '.past'
-  work12.className += '.past'
-  work1.className += '.past'
-  work2.className += '.past'
-  work3.className += '.past'
-  work4.className += '.past'
-}
-*/
 
 
 

@@ -7,6 +7,7 @@ var work1 = document.querySelector("#work1");
 var work2 = document.querySelector("#work2");
 var work3 = document.querySelector("#work3");
 var work4 = document.querySelector("#work4");
+var savePng = document.querySelector(".savePng")
 
 var workHours = [
   work8,
@@ -25,7 +26,58 @@ var workHours = [
 var currentTime = moment().format("MMMM D, YYYY h:mm A")
 document.querySelector("#currentDay").textContent = currentTime
 
+savePng.addEventListener('click', workComment)
 
+//create function to save user input
+function workComment() {
+  var toDoItem8 = work8.value;
+  var toDoItem9 = work9.value;
+  var toDoItem10 = work10.value;
+  var toDoItem11 = work11.value;
+  var toDoItem12 = work12.value;
+  var toDoItem1 = work1.value;
+  var toDoItem2 = work2.value;
+  var toDoItem3 = work3.value;
+  var toDoItem4 = work4.value;
+
+  var toDoList =
+  {
+    toDoItem8: toDoItem8,
+    toDoItem9: toDoItem9,
+    toDoItem10: toDoItem10,
+    toDoItem11: toDoItem11,
+    toDoItem12: toDoItem12,
+    toDoItem1: toDoItem1,
+    toDoItem2: toDoItem2,
+    toDoItem3: toDoItem3,
+    toDoItem4: toDoItem4,
+  }
+
+  console.log(toDoList)
+
+  var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
+  toDoDay.push(toDoList)
+  localStorage.setItem("toDoToday", JSON.stringify(toDoDay))
+}
+
+function displayWorkComment() {
+  var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
+  console.log(toDoDay)
+  for (let index = 0; index < toDoDay.length; index++) {
+    work8.textContent = toDoDay[index].toDoItem8;
+    work9.textContent = toDoDay[index].toDoItem9;
+    work10.textContent = toDoDay[index].toDoItem10;
+    work11.textContent = toDoDay[index].toDoItem11;
+    work12.textContent = toDoDay[index].toDoItem12;
+    work1.textContent = toDoDay[index].toDoItem1;
+    work2.textContent = toDoDay[index].toDoItem2;
+    work3.textContent = toDoDay[index].toDoItem3;
+    work4.textContent = toDoDay[index].toDoItem4;
+
+  }
+}
+
+displayWorkComment()
 
 /* start momentjs time idea
 var workStart = "2022-08-08 8:00:00"

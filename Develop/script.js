@@ -26,10 +26,17 @@ for (let index = 0; index < workHours.length; index++) {
 
 // momentjs workStart
 
-var workStart = moment("8:00", "HH:mm").format("HH:mm");
+var workStart = "2022-08-08 08:00:00";
 console.log(workStart);
 
-workHours[0].textContent = workStart;
-workHours[1].textContent = workStart.add(1, "hours").format("HH:mm");
+workHours[0].textContent = moment(workStart).format("HH:mm");
+workHours[1].textContent = moment(workStart).add(1, "hours").format("HH:mm");
+workHours[2].textContent = moment(workStart).add(2, "hours").format("HH:mm");
+workHours[3].textContent = moment(workStart).add(3, "hours").format("HH:mm");
+workHours[4].textContent = moment(workStart).add(4, "hours").format("HH:mm");
+workHours[5].textContent = moment(workStart).subtract(7, "hours").format("HH:mm");
+workHours[6].textContent = moment(workStart).subtract(6, "hours").format("HH:mm");
+workHours[7].textContent = moment(workStart).subtract(5, "hours").format("HH:mm");
+workHours[8].textContent = moment(workStart).subtract(4, "hours").format("HH:mm");
 
 //end momentjs

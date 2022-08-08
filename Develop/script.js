@@ -24,7 +24,6 @@ var workHours = [
 // momentjs workStart
 var currentTime = moment().format("MMMM D, YYYY h:mm A")
 document.querySelector("#currentDay").textContent = currentTime
-console.log(currentTime)
 
 /* start momentjs time idea
 var workStart = "2022-08-08 8:00:00"

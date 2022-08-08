@@ -57,6 +57,7 @@ textarea {
   color: white;
 }
 
+/*savebtn
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -69,6 +70,7 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+*/
 
 .savePng {
   display: inline;

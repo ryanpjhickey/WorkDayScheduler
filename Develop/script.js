@@ -20,16 +20,19 @@ var workHours = [
   work4,
 ];
 
+
+// momentjs workStart
+var currentTime = moment().format("MMMM D, YYYY h:mm A")
+document.querySelector("#currentDay").textContent = currentTime
+console.log(currentTime)
+
+/* start momentjs time idea
+var workStart = "2022-08-08 8:00:00"
+console.log(workStart);
+
 for (let index = 0; index < workHours.length; index++) {
   workStart;
 }
-
-// momentjs workStart
-var currentTime = moment().format('h:mm A')
-console.log(currentTime)
-
-var workStart =
-  console.log(workStart);
 
 workHours[0].textContent = moment(workStart).format('h:mm A');
 workHours[1].textContent = moment(workStart).add(1, "hours").format("HH:mm");
@@ -40,5 +43,8 @@ workHours[5].textContent = moment(workStart).add(5, "hours").format("HH:mm");
 workHours[6].textContent = moment(workStart).add(6, "hours").format("HH:mm");
 workHours[7].textContent = moment(workStart).add(7, "hours").format("HH:mm");
 workHours[8].textContent = moment(workStart).add(8, "hours").format("HH:mm");
+
+end moment js idea
+*/
 
 //end momentjs

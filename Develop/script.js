@@ -21,14 +21,10 @@ var workHours = [
   work4,
 ];
 
-
-// momentjs workStart
-var currentTime = moment().format("MMMM D, YYYY h:mm A")
-document.querySelector("#currentDay").textContent = currentTime
+//create function to save user input
 
 savePng.addEventListener('click', workComment)
 
-//create function to save user input
 function workComment() {
   var toDoItem8 = work8.value;
   var toDoItem9 = work9.value;
@@ -78,6 +74,253 @@ function displayWorkComment() {
 }
 
 displayWorkComment()
+
+// momentjs workStart
+var currentDay = moment().format("MMMM D, YYYY h:mm A")
+document.querySelector("#currentDay").textContent = currentDay
+
+var timeFormat = 'hh:mm'
+var eight = moment('08:00', timeFormat)
+var nine = moment('09:00', timeFormat)
+var ten = moment('10:00', timeFormat)
+var eleven = moment('11:00', timeFormat)
+var twelve = moment('12:00', timeFormat)
+var one = moment('13:00', timeFormat)
+var two = moment('14:00', timeFormat)
+var three = moment('15:00', timeFormat)
+var four = moment('16:00', timeFormat)
+var five = moment('17:00', timeFormat)
+
+var currentTime = moment()
+
+if (currentTime.isBefore(eight)) {
+  work8.className += '.future'
+  work9.className += '.future'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(eight, nine)) {
+  work8.className += '.present'
+  work9.className += '.future'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(nine, ten)) {
+  work8.className += '.past'
+  work9.className += '.present'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(ten, eleven)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.present'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(eleven, twelve)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.present'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(twelve, one)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.present'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(one, two)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.present'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(two, three)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.present'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(three, four)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.present'
+  work4.className += '.future'
+} else if (currentTime.isBetween(four, five)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.past'
+  work4.className += '.present'
+} else if (currentTime.isAfter(five)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.past'
+  work4.className += '.past'
+}
+
+
+/*
+if (currentTime.isBefore(eight)) {
+  work8.className += '.future'
+  work9.className += '.future'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(eight, nine)) {
+  work8.className += '.present'
+  work9.className += '.future'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(nine, ten)) {
+  work8.className += '.past'
+  work9.className += '.present'
+  work10.className += '.future'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(ten, eleven)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.present'
+  work11.className += '.future'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(eleven, twelve)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.present'
+  work12.className += '.future'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(twelve, one)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.present'
+  work1.className += '.future'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(one, two)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.present'
+  work2.className += '.future'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(two, three)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.present'
+  work3.className += '.future'
+  work4.className += '.future'
+} else if (currentTime.isBetween(three, four)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.present'
+  work4.className += '.future'
+} else if (currentTime.isBetween(four, five)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.past'
+  work4.className += '.present'
+} else if (currentTime.isAfter(five)) {
+  work8.className += '.past'
+  work9.className += '.past'
+  work10.className += '.past'
+  work11.className += '.past'
+  work12.className += '.past'
+  work1.className += '.past'
+  work2.className += '.past'
+  work3.className += '.past'
+  work4.className += '.past'
+}
+*/
+
+
 
 /* start momentjs time idea
 var workStart = "2022-08-08 8:00:00"

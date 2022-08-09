@@ -4,4 +4,4 @@ This work day scheduler will allow you to input whatever you want in order to sc
 
 Link to deployed site: https://ryanpjhickey.github.io/WorkDayScheduler/
 
-![Alt Text](WorkSchedWebPage.png)
+![Work Day Scheduler](./WorkSchedWebPage.png)

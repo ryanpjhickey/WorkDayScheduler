@@ -38,9 +38,6 @@ function workComment() {
     toDoItem3: toDoItem3,
     toDoItem4: toDoItem4,
   }
-
-  console.log(toDoList)
-
   var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
   toDoDay.push(toDoList)
   localStorage.setItem("toDoToday", JSON.stringify(toDoDay))
@@ -48,7 +45,6 @@ function workComment() {
 
 function displayWorkComment() {
   var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
-  console.log(toDoDay)
   for (let index = 0; index < toDoDay.length; index++) {
     work8.textContent = toDoDay[index].toDoItem8;
     work9.textContent = toDoDay[index].toDoItem9;

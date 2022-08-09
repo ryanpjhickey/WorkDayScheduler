@@ -1,3 +1,5 @@
+// Define commonly used variables //
+
 var work8 = document.querySelector("#work8");
 var work9 = document.querySelector("#work9");
 var work10 = document.querySelector("#work10");
@@ -9,19 +11,7 @@ var work3 = document.querySelector("#work3");
 var work4 = document.querySelector("#work4");
 var savePng = document.querySelector(".savePng")
 
-var workHours = [
-  work8,
-  work9,
-  work10,
-  work11,
-  work12,
-  work1,
-  work2,
-  work3,
-  work4,
-];
-
-//create function to save user input
+// create function to save user input //
 
 savePng.addEventListener('click', workComment)
 
@@ -75,9 +65,17 @@ function displayWorkComment() {
 
 displayWorkComment()
 
-// momentjs workStart
+// end function, I used same set up from previous week challenge //
+
+// momentjs work start //
+
+//currentDay simply displays current date and time on top of the webpage //
 var currentDay = moment().format("MMMM D, YYYY h:mm A")
 document.querySelector("#currentDay").textContent = currentDay
+
+// timeFormat allows for simple checking of the current time of hh:mm only, without additional information required //
+// source used: //
+// https://stackoverflow.com/questions/36197031/how-to-use-moment-js-to-check-whether-the-current-time-is-between-2-times //
 
 var timeFormat = 'hh:mm'
 var eight = moment('08:00', timeFormat)
@@ -91,8 +89,14 @@ var three = moment('15:00', timeFormat)
 var four = moment('16:00', timeFormat)
 var five = moment('17:00', timeFormat)
 
+
+//currentTime simply accesses the current time in a given moment
 var currentTime = moment()
 
+// this if statement dynamically changes the backgrounds of the textareas depending on the time of day //
+// sources used: //
+// https://stackoverflow.com/questions/22576927/how-to-dynamically-change-css-class-of-an-html-tag //
+// https://stackoverflow.com/questions/36197031/how-to-use-moment-js-to-check-whether-the-current-time-is-between-2-times //
 if (currentTime.isBefore(eight)) {
   work8.classList.add('future')
   work9.classList.add('future')
@@ -205,6 +209,7 @@ if (currentTime.isBefore(eight)) {
   work4.classList.add('past')
 }
 
+// end moment js //
 
 
 
@@ -229,4 +234,16 @@ workHours[8].textContent = moment(workStart).add(8, "hours").format("HH:mm");
 end moment js idea
 */
 
-//end momentjs
+/* I created an array but didn't really use it. Leaving it in commentation for reference is needed later
+var workHours = [
+  work8,
+  work9,
+  work10,
+  work11,
+  work12,
+  work1,
+  work2,
+  work3,
+  work4,
+];
+*/

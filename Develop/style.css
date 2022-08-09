@@ -57,7 +57,17 @@ textarea {
   color: white;
 }
 
-/*savebtn
+/* create .savePng class to properly size save.png and also allow for js to link it to function workComment */
+.savePng {
+  display: inline;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+/* I commented out saveBtn CSS documentation to save just in case, but I had a different approach using an image as an input, so I did not end up using
+
+
+savebtn
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -71,9 +81,3 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 */
-
-.savePng {
-  display: inline;
-  max-width: 80px;
-  max-height: 80px;
-}

@@ -9,54 +9,29 @@ var work1 = document.querySelector("#work1");
 var work2 = document.querySelector("#work2");
 var work3 = document.querySelector("#work3");
 var work4 = document.querySelector("#work4");
-var savePng = document.querySelector(".savePng")
+var page = document.querySelector(".container")
 
 // create function to save user input //
 
-savePng.addEventListener('click', workComment)
-
-function workComment() {
-  var toDoItem8 = work8.value;
-  var toDoItem9 = work9.value;
-  var toDoItem10 = work10.value;
-  var toDoItem11 = work11.value;
-  var toDoItem12 = work12.value;
-  var toDoItem1 = work1.value;
-  var toDoItem2 = work2.value;
-  var toDoItem3 = work3.value;
-  var toDoItem4 = work4.value;
-
-  var toDoList =
-  {
-    toDoItem8: toDoItem8,
-    toDoItem9: toDoItem9,
-    toDoItem10: toDoItem10,
-    toDoItem11: toDoItem11,
-    toDoItem12: toDoItem12,
-    toDoItem1: toDoItem1,
-    toDoItem2: toDoItem2,
-    toDoItem3: toDoItem3,
-    toDoItem4: toDoItem4,
+function workComment(e) {
+  if (e.target.tagName !== "BUTTON") {
+    return
   }
-  var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
-  toDoDay.push(toDoList)
-  localStorage.setItem("toDoToday", JSON.stringify(toDoDay))
+  var textAreaVal = e.target.previousElementSibling.value
+  var lsKey = e.target.previousElementSibling.getAttribute('id')
+  localStorage.setItem(lsKey, JSON.stringify(textAreaVal))
 }
 
 function displayWorkComment() {
-  var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
-  for (let index = 0; index < toDoDay.length; index++) {
-    work8.textContent = toDoDay[index].toDoItem8;
-    work9.textContent = toDoDay[index].toDoItem9;
-    work10.textContent = toDoDay[index].toDoItem10;
-    work11.textContent = toDoDay[index].toDoItem11;
-    work12.textContent = toDoDay[index].toDoItem12;
-    work1.textContent = toDoDay[index].toDoItem1;
-    work2.textContent = toDoDay[index].toDoItem2;
-    work3.textContent = toDoDay[index].toDoItem3;
-    work4.textContent = toDoDay[index].toDoItem4;
-
-  }
+  work8.value = JSON.parse(localStorage.getItem("work8")) || '';
+  work9.value = JSON.parse(localStorage.getItem("work9")) || '';
+  work10.value = JSON.parse(localStorage.getItem("work10")) || '';
+  work11.value = JSON.parse(localStorage.getItem("work11")) || '';
+  work12.value = JSON.parse(localStorage.getItem("work12")) || '';
+  work1.value = JSON.parse(localStorage.getItem("work1")) || '';
+  work2.value = JSON.parse(localStorage.getItem("work2")) || '';
+  work3.value = JSON.parse(localStorage.getItem("work3")) || '';
+  work4.value = JSON.parse(localStorage.getItem("work4")) || '';
 }
 
 displayWorkComment()
@@ -207,6 +182,8 @@ if (currentTime.isBefore(eight)) {
 
 // end moment js //
 
+page.addEventListener('click', workComment)
+
 
 
 /* start momentjs time idea
@@ -242,4 +219,32 @@ var workHours = [
   work3,
   work4,
 ];
+
+Old function that did not work
+
+// var toDoItem8 = work8.value;
+  // var toDoItem9 = work9.value;
+  // var toDoItem10 = work10.value;
+  // var toDoItem11 = work11.value;
+  // var toDoItem12 = work12.value;
+  // var toDoItem1 = work1.value;
+  // var toDoItem2 = work2.value;
+  // var toDoItem3 = work3.value;
+  // var toDoItem4 = work4.value;
+
+  // var toDoList =
+  // {
+  //   toDoItem8: toDoItem8,
+  //   toDoItem9: toDoItem9,
+  //   toDoItem10: toDoItem10,
+  //   toDoItem11: toDoItem11,
+  //   toDoItem12: toDoItem12,
+  //   toDoItem1: toDoItem1,
+  //   toDoItem2: toDoItem2,
+  //   toDoItem3: toDoItem3,
+  //   toDoItem4: toDoItem4,
+  // }
+  // var toDoDay = JSON.parse(localStorage.getItem("toDoToday")) || []
+  // toDoDay.push(toDoList)
+  // localStorage.setItem("toDoToday", JSON.stringify(toDoDay))
 */

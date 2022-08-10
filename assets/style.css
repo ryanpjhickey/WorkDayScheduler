@@ -58,7 +58,7 @@ textarea {
 }
 
 /* create .savePng class to properly size save.png and also allow for js to link it to function workComment */
-.savePng {
+.savePngStyle {
   display: inline;
   max-width: 80px;
   max-height: 80px;
